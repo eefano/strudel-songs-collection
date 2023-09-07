@@ -1,6 +1,22 @@
 // "Swim And Sleep Like A Shark" (by Unknown Mortal Orchestra)
 // WORK IN PROGRESS
 
+Pattern.prototype.enumerate = function () {
+  const pat = this.sortHapsByPart()
+  return new Pattern(state => {
+    const haps = pat.query(state.withSpan(span => span.begin.wholeCycle()))
+    const chunks = haps.length
+    return haps.map((hap, i) => new Hap(hap.whole, hap.part.intersection(state.span), [hap.value, i, chunks])
+                  ).filter(hap => hap.part != undefined)
+  }).splitQueries()
+}
+Pattern.prototype.warp = function (tpat) {
+  const pat = this;
+  return tpat.enumerate().withValue(v => pat.zoom(Fraction(v[1]).div(v[2]), 
+                                                  Fraction(v[1]).add(1).div(v[2]))
+                                  ).outerJoin()
+}
+
 function tablature(te,tB,tG,tD,tA,tE)
   { return stack(te.add(64),tB.add(59),tG.add(55),tD.add(50),tA.add(45),tE.add(40)); }
 
