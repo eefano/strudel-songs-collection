@@ -15,9 +15,10 @@ const h6 = `C#m@2 D#@4 C#@2 F#@2 B@2 E@2 C#m@2 F#@2 A#@2`.slow(20/4);
 const chords = arrange([40/4,h1],[3/4,h2],[35/4,h3],[3/4,h4],[40/4,h1],[7/4,h5],[35/4,h3],[20/4,h6]);
 
 stack(  
- chords.voicings('triads').transpose(12).arp(stack("0","1".late(.1),"2".late(.2)).fast(4))
-  .note().s("gm_pad_choir").echo(2,1/6,.7).room(0.5).gain(0.7), 
- chords.rootNotes(2).note().s("gm_lead_2_sawtooth").attack(0.2).sustain(1.2).room(0.4).lpf(1000).gain(0.4),
- melody.note().s("gm_lead_1_square").attack(0.02).sustain(1.5).room(0.4).lpf(1200).gain(0.8),
- s("<rd*4>").bank('LinnDrum').gain(0.05).room(0.4)
-).cpm(120/4)
+ n(stack("0","1".late(.1),"2".late(.2)).fast(4)).chord(chords).anchor("G5").voicing().s("gm_pad_choir").echo(2,1/6,.7).gain(0.8), 
+ chords.rootNotes(2).note().s("gm_lead_2_sawtooth").attack(0.2).sustain(1.2).lpf(1000).gain(0.4),
+ melody.note().s("gm_lead_1_square").attack(0.02).sustain(1.5).lpf(1200).gain(0.75),
+ s("<rd*4>").bank('LinnDrum').gain(0.07)
+).cpm(115/4)
+.room(    slider(0.91,0,10))
+  .rsize(   slider(4,0,8,1))

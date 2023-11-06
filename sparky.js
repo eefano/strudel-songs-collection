@@ -10,9 +10,9 @@ const scala = "<c#4:major [f#4:major b3:major] [g#4:minor e4:major] [a4:major f#
   stack(
  "<[0,2,4]*2>".struct("[x ~]*4").scale(scala).apply(accordi),
 // "<[2@3 3] [0@3 2] [4@3 6] [2@3 3] [0@3 1] [-1@3 -2] -3 [0 1]>".scale(scala).transpose(12).apply(melodia),
-"<[4 2 0 4]*2 >".scale(scala).transpose(-12).apply(guitar),
+"<[4 2 0 4 7 9 14 7 9 7]*3 >".scale(scala).transpose(-12).apply(guitar),
 "-3".struct("[x ~]*4").scale(scala).apply(basso),
-s("[sd,hh]!4").apply(ritmo),
+s("[sd,hh*3]!4").apply(ritmo),
 ).cpm(120/4)
 
 

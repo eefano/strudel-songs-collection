@@ -11,3 +11,5 @@ stack(
   chord(chrds).anchor("G4").voicing().struct("<[[~ x x] [x@2 x] [~ x ~] x]!8 [x!4] [~ x ~ x]!2>").gain(0.7),
   chrds.rootNotes(2).note().struct("<[x@2 ~]*2!9 [x ~ [~ ~ x] ~]!2>").gain(0.7),
 ).cpm(120/4).room(0.4).piano()//.pianoroll()
+ .room(    slider(1.9,0,10))
+  .rsize(   slider(6,0,8,1))
