@@ -20,10 +20,10 @@ stack
 ,"<1@14 [[4@25 ~@29],8]@2>".mzj(mels).add(24).note().s("gm_ocarina").gain(0.3).color("red")
 ,"<9@14 ~@2>".mzj(mels).n().chord(epic).anchor("C4").voicing().s("<gm_reed_organ@10 gm_church_organ:1@4 ~@2>").gain("<0.25@10 0.4@4 ~@2>").color("green").midichan(3)
 ,"<0@14 [[4@25 ~@29],8]@2>".mzj(mels).sub(24).note().s("gm_electric_bass_finger").lpf(300).gain(0.6).color("blue")
-,"<0 [0@2 1@2 0 2@4] 0!12 2@2>".mzj(
+,"<[0@2 1@2 0 2@4] 0!12 3@2>".mzj(
   ["<rd*3 , <<<bd!4 sd> sd> ~ bd>*3 , cr/9>*9"
   ,"[[sd [bd,cr] ~]!2@3]*9/2"
-  ,"[[sd,[~ sd@10]] [[bd,cr] ~]!2@2 bd [ [sd,[~ sd@10]] <[mt lt] [bd,cr]>@2 ]!2@3 ]*9/4"
+  ,"<[sd,[~ sd@10]] [[bd,cr] ~]!2@2 bd [sd,[~ sd@10]] mt lt >*9*3"
    
   ,"< [<[sd,[~ sd@10]]!2 ~> <[bd,cr]!2 [sd,[~ sd@10]]> [bd,cr]!2 ~ [bd,cr] ~ [bd,cr,cr] ~]*3 ~*4 >" 
   ]).moj({rd:/*note(51).*/s('rd').velocity(0.1).pan(0.4),
