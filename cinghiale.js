@@ -1,7 +1,6 @@
 // "L'Era Del Cinghiale Bianco" 
 // song @by Franco Battiato
 // script @by eefano
-const pickRestart = register('pickRestart', (arr, pat) => pat.pick(arr.map((x)=>x.restart(pat.collect().fmap(v=>v+1)))))
 stack(
   "<0@16 1@14 >".pickRestart(["<[0 1]!2 [0 2] [0 3]>/4","<4!2@7>"]).pickRestart(
    ["<[7 6 5 6 7 5 6 7]!2>".add("<0 1>")

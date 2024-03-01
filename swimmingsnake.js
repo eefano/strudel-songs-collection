@@ -1,8 +1,6 @@
 // "Swimming With The Snake" - Work In Progress
 // song @by Tim Smith of Cardiacs
 // script @by eefano
-const mzj = register('mzj', (lookup, pat) => (pat.fmap((i) => lookup[i]).trigzeroJoin())); 
-const moj = register('moj', (lookup, pat) => (pat.fmap((i) => lookup[i]).outerJoin())); 
 const rando1 = `4 5 6 3 5 6 5 2 3 4 5 2 6 ~ 7 6 
 4 2 5 3 6 5 3 7 4 5 6 3 7 ~ 9 4 6 7 3 5 3 6 5 1 4 5 3 4 2 3 4 5
 7 8 9 7 8 9 10 6 3 7 6 4 5 6 7 8 9 3 5 6 7 8 3 5 6 7 5 6 7 9 8@2`
@@ -24,12 +22,12 @@ const pats =
 stack(part.layer(x=>x.pan(0.2),x=>x.pan(0.8).late(3/4)).s("gm_pad_warm").release(0.05).room(0.5).color("white")
       
 ,"<ba1@48 ba2@24 ba1@24 ba1@22 ba4@26 ba1@24 ba1@22 ba4@26>"
- .mzj(pats).scale("c#:minor").sub(12).note().s("gm_synth_strings_2").gain(1).color("green")
-,"<~@48 al2@24 ~@24 ~@22 ~@26 ~@46 ~@26>".mzj(pats).scale("c#:minor").add(24).note().s("gm_recorder").release(0.2).gain(0.4).color("red")
-,stack("<~@48 ~@24 vr1@46 vr4@26 vr1@46 vr4@26>".mzj(pats),
-       "<~@48 ~@24 ~@46 ~@26 vr1@46 vr4@26>".mzj(pats).sub(2))
+ .pickRestart(pats).scale("c#:minor").sub(12).note().s("gm_synth_strings_2").gain(1).color("green")
+,"<~@48 al2@24 ~@24 ~@22 ~@26 ~@46 ~@26>".pickRestart(pats).scale("c#:minor").add(24).note().s("gm_recorder").release(0.2).gain(0.4).color("red")
+,stack("<~@48 ~@24 vr1@46 vr4@26 vr1@46 vr4@26>".pickRestart(pats),
+       "<~@48 ~@24 ~@46 ~@26 vr1@46 vr4@26>".pickRestart(pats).sub(2))
  .scale("c#:minor").transpose(0).note().s("sawtooth").hpf(1300).attack(.1).release(0.2).gain(0.40).color("yellow")
-,"<~@48 ~@24 ~@46 ~@26 ~@46 tr1@26>".mzj(pats).scale("c#:minor").transpose(12).note().s("gm_oboe").gain(0.65).color("red")
+,"<~@48 ~@24 ~@46 ~@26 ~@46 tr1@26>".pickRestart(pats).scale("c#:minor").transpose(12).note().s("gm_oboe").gain(0.65).color("red")
 ,s("shaker_small").struct("[x ~ ~ x]").gain("4.0 ~ ~ 2.0").color("brown")
 ,s("handbells").struct("x*2 x").gain(rand.range(0.1,0.4)).color("brown")
   

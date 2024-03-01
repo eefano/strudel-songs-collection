@@ -1,9 +1,6 @@
 // "The Rhythm Of The Night" - Work In Progress
 // song @by Corona
 // script @by eeefano
-const pickRestart = register('pickRestart', (lookup, pat) => (pat.fmap((i) => lookup[i]).trigzeroJoin())); 
-const pickOuter = register('pickOuter', (lookup, pat) => (pat.fmap((i) => lookup[i]).outerJoin())); 
-
 const as = register('as', (mapping, pat) => { mapping = Array.isArray(mapping) ? mapping : [mapping];
   return pat.fmap((v) => { v = Array.isArray(v) ? v : [v, 0];
     return Object.fromEntries(mapping.map((prop, i) => [prop, v[i]])); }); });
