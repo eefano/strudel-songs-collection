@@ -1,5 +1,4 @@
 // "Pump Up The Jam" - Work In Progress
-// song(Technotronic) 
 // song @by Technotronic
 // script @by eefano
 const pickRestart = register('pickRestart', (arr, pat) => pat.pick(arr.map((x)=>x.restart(pat.collect().fmap(v=>v+1)))))

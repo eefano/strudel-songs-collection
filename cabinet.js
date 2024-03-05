@@ -1,4 +1,6 @@
-// "Cabinet" - Spratleys Japs (work in progress)
+// "Cabinet" (work in progress)
+// song @by Spratleys Japs
+// script @by eefano
 
 function arr(p,l) { return [l,p.slow(l)]; }
 
@@ -10,7 +12,7 @@ const chords = arrange(h1,h2,h3);
 
 
 stack(
-  chords.rootNotes(3).note().s('triangle').lpf(400).gain(0.6),
+  chord(chords).rootNotes(3).s('triangle').lpf(400).gain(0.6),
   chord(chords).anchor("E5").voicing().s('gm_drawbar_organ').gain(0.35),
 
   s("sleighbells").struct("x*6").gain(3),

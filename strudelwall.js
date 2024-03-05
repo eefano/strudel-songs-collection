@@ -23,9 +23,8 @@ const guitar = (strums,fingers,tuning=standardtuning) =>
     [fingers.pickOut(fingering).gString(0),fingers.pickOut(fingering).gString(1),fingers.pickOut(fingering).gString(2)
     ,fingers.pickOut(fingering).gString(3),fingers.pickOut(fingering).gString(4),fingers.pickOut(fingering).gString(5)]));
 
-setcps(120/60/2)
 stack(
-  guitar("[d@4 d@3 u d u d@2 d@3 u d u d@2 d@2 d u@2 u@2 u d u d u]","[Em7@9 G_@8 Dsus4@6 A7sus4@7 G_@2]")
+  guitar("[d@4 d@3 u d u d@2 d@3 u d u d@2 d@2 d u@2 u@2 u d u d u]/4","[Em7@9 G_@8 Dsus4@6 A7sus4@7 G_@2]/4")
     .s("gm_acoustic_guitar_steel:2").clip(1).release(0.4).gain(0.6)
 
-).slow(5)//.pianoroll()
+).cpm(174/4)//.pianoroll()

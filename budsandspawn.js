@@ -1,12 +1,14 @@
-// 'Buds And Spawn' by Cardiacs (work in progress)
-const i_chords = x => x.note().s("recorder_tenor_sus").clip(1).decay(1.2).sustain(0).release(0.5)
-const i_sax    = x => x.note().s("sax").gain(0.3).clip(1).release(0)
-const i_bass   = x => x.note().s("triangle").clip(1).release(0.1)
+// "Buds And Spawn" (work in progress)
+// song @by Cardiacs
+// script @by eefano
+const i_chords = x => x.s("recorder_tenor_sus").clip(1).decay(1.2).sustain(0).release(0.5)
+const i_sax    = x => x.s("sax").gain(0.3).clip(1).release(0)
+const i_bass   = x => x.s("triangle").clip(1).release(0.1)
 const i_drums  = x => x.bank("YamahaRY30").clip(1).gain(0.08)
 const i_piano  = x => x.piano().gain(0.2)
 
-const I_chord = "[0,2,4]"
-const p_up = "[-5@0.5 -4 -3 [-2 -1] 0 1 2@0.5]".legato(0.7)
+const I_chord = n("[0,2,4]")
+const p_up = n("[-5@0.5 -4 -3 [-2 -1] 0 1 2@0.5]").clip(0.7)
 const p_dw = p_up.rev()
 
 function stackme(sc, chordpart, saxpart, drumpart) {

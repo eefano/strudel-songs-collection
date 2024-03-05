@@ -16,4 +16,4 @@ const guitar = seq(tablature("0","2","2","1","0","0"),
 stack(
   guitar.note().s("gm_electric_guitar_jazz").clip(1).release(0.4).gain(0.5),
 
-).slow(5).pianoroll()
+).cpm(110/4/2).pianoroll()

@@ -1,11 +1,11 @@
 
 
-setcps(1)
+setcps(130/60)
 let tempo = sine.segment(16).slow(9)
 
 
 
-stack(cps(tempo.mul(20/60).add(120/60)).gain(0),
+stack(cps(tempo.mul(20/60).add(130/60)).gain(0),
 
 "<4@3 [2@2 1]@3 0@4 0 1 2 0 2 4@2 5 4@3 3@3 3@3 [1@2 0]@3 b2@4 -3 b2 1 b2 1 3 4 5 f#3@3 4@3 >"
       .scale("c:minor").transpose(12).note().s("gm_oboe:2").gain(0.7),

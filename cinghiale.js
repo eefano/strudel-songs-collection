@@ -7,7 +7,7 @@ stack(
    ,"<[9 8 7 8]*3@1.5 [9 ~!1]@0.5>"
    ,"<9 [~ 7 8 6]>","<9 [~ 7 8 9]>"
    ,"<7@3 6@3 7@5 8 9 7 5@3 6@3 7@5 ~@5>*4"
-  ]).scale("c4:major").add("<[0 -5]@16 [0@7 -5@8]!2@7 >").note().s("sawtooth").vib(5).vmod(0.1).clip(0.85).attack(0.05).release(0.1).gain(0.6)
+  ]).n().scale("c4:major").transpose("<[0 -5]@16 [0@7 -5@8]!2@7 >").s("sawtooth").vib(5).vmod(0.1).clip(0.85).attack(0.05).release(0.1).gain(0.6)
 
 ,"<0@16 1!2@7 >".pickRestart(["<[Am G C@2]!2 [Em D G@2]!2>/4","<Am@3 G@3 C@5 ~@3 Em@3 D@3 G@5 ~@5>*4"])
   .chord().anchor("C4").voicing().s("triangle").lpf(1200).attack(0.01).gain(0.35)

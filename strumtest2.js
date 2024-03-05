@@ -5,4 +5,4 @@ stack(
      .chord("G!2 Bm E ".slow(4)).anchor("G4!2 F#4 E4".slow(4)).voicing()
      .s("gm_electric_guitar_jazz").clip(1).release(0.4).gain(0.5),
 
-).slow(2).pianoroll()
+).cpm(140/4).pianoroll()

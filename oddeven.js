@@ -1,3 +1,6 @@
+// "Odd Even" (Work In Progress)
+// song @by Cardiacs
+// script @by eefano
 
 const k = 0.01;
 
@@ -16,4 +19,4 @@ stack(
        [4 3 [2 ~] [1 ~] 0@2 7@2]
      >`.scale("g2:lydian").note().s("gm_bassoon")
 
-).slow(2).pianoroll()
+).cpm(120/4)//.pianoroll()

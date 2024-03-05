@@ -1,3 +1,6 @@
+// "Jitterbug (Coda)" - In Reverse
+// song @by Cardiacs
+// script @by eefano
 const melody = 
   `f#4@3 d4@4 g4@6 g#4@4 f4@3 d#4@3 e4@4 c#4@6 b3@4 g#3@3 g#4@5 a4@4 f#4@3 d#4@3 f#4@4 g4@6 a4@4 a#4@6 d#4@3.9 ~@0.1 d#4@3
    f4@3 d4@4 d#4@5 e4@3 g4@4 e4@6 f#4@4 c4@2.9 ~@0.1 c4@3 g#3@4 a#3@4 b3@6 c#4@4 g4@6 a4@4 a#4@6 d#4@3.9 ~@0.1
@@ -23,5 +26,5 @@ stack(
  chord(chords).anchor("G5").voicing().s("gm_pad_choir").pan(0.6).gain(0.9), 
  chords.rootNotes(2).note().s("gm_lead_2_sawtooth").attack(0.2).sustain(1.2).lpf(1000).gain(0.5),
  melody.note().s("gm_lead_1_square").attack(0.02).sustain(1.5).lpf(1200).gain(0.75),
-).slow(90).room(    slider(0.91,0,10)) .rsize(   slider(4,0,8,1))
+).slow(115/183).room(    slider(0.91,0,10)) .rsize(   slider(4,0,8,1))
 

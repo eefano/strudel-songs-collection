@@ -10,10 +10,9 @@ stack(
   chord(chrds).anchor("C5".transpose(run(12).slow(ln))).voicing().s('gm_string_ensemble_2').pan(0.4).gain(add(cresc,tri.range(0,0.1).slow(ln))),
   
   n("[0 1 2 3 4 3 4 5 4 3 2 3 2 1]*1.7").chord(chrds).anchor("C6").voicing().s('gm_oboe').room(0.5).gain(0.18),
-  chrds.rootNotes("[1 2]!2").struct("x*8").legato(0.90).note().s('gm_electric_bass_finger').lpf(280).gain(0.5),
+  chrds.rootNotes("[1 2]!2").struct("x*8").clip(0.90).note().s('gm_electric_bass_finger').lpf(280).gain(0.5),
 
   s("[bd!2 ~ bd]*2").bank("AkaiLinn").lpf(200).gain(0.15),
   s("<~ sd>*4").bank("AkaiLinn").hpf(250).lpf(4000).gain(0.30),
   s("hh*8").gain(0.15) 
 ).cpm(90/4).room(0.7) //.pianoroll()
- 

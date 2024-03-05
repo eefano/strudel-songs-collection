@@ -26,7 +26,7 @@ stack(part.layer(x=>x.pan(0.2),x=>x.pan(0.8).late(3/4)).s("gm_pad_warm").release
 ,"<~@48 al2@24 ~@24 ~@22 ~@26 ~@46 ~@26>".pickRestart(pats).scale("c#:minor").add(24).note().s("gm_recorder").release(0.2).gain(0.4).color("red")
 ,stack("<~@48 ~@24 vr1@46 vr4@26 vr1@46 vr4@26>".pickRestart(pats),
        "<~@48 ~@24 ~@46 ~@26 vr1@46 vr4@26>".pickRestart(pats).sub(2))
- .scale("c#:minor").transpose(0).note().s("sawtooth").hpf(1300).attack(.1).release(0.2).gain(0.40).color("yellow")
+ .scale("c#:minor").transpose(0).note().s("triangle").hpf(1000).attack(.1).release(0.2).gain(1.2).color("yellow")
 ,"<~@48 ~@24 ~@46 ~@26 ~@46 tr1@26>".pickRestart(pats).scale("c#:minor").transpose(12).note().s("gm_oboe").gain(0.65).color("red")
 ,s("shaker_small").struct("[x ~ ~ x]").gain("4.0 ~ ~ 2.0").color("brown")
 ,s("handbells").struct("x*2 x").gain(rand.range(0.1,0.4)).color("brown")
