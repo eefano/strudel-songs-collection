@@ -1,5 +1,6 @@
-// "O'Malley, Former Underdog" by Deerhoof (Work In Progress)
-const pickRestart = register('pickRestart', (arr, pat) => pat.pick(arr.map((x)=>x.restart(pat.collect().fmap(v=>v+1)))))
+// "O'Malley, Former Underdog" (work in progress)
+// song @by Deerhoof
+// script @by eefano
 const crdpart = "<~@6 0@17 1@4 0@17 1@4 2@10>".pickRestart(
 ["[ C@2 D@2 [[C ~]!3 D@2 [D ~] D@2]@2 G@2 D@3 Am G D A D@2 ]/17"
 ,"[ Em@2 D@2 ]/4"
@@ -19,5 +20,3 @@ stack("~"
 
 ,s("hh*2").bank("RolandTR909").room(0.2).color("yellow").gain(0.2)
 ).cpm(147/2)
-
-
