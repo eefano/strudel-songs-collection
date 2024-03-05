@@ -26,5 +26,5 @@ stack(
  chord(chords).anchor("G5").voicing().s("gm_pad_choir").pan(0.6).gain(0.9), 
  chords.rootNotes(2).note().s("gm_lead_2_sawtooth").attack(0.2).sustain(1.2).lpf(1000).gain(0.5),
  melody.note().s("gm_lead_1_square").attack(0.02).sustain(1.5).lpf(1200).gain(0.75),
-).slow(115/183).room(    slider(0.91,0,10)) .rsize(   slider(4,0,8,1))
+).cpm(115/183).room(    slider(0.91,0,10)) .rsize(   slider(4,0,8,1))
 
