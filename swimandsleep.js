@@ -77,17 +77,14 @@ const parts =
 "~ ~ ~ ~  ~  ~  ~ ~",).warp("t@3 t!3 t@2 t@3 t t@4").slow(8)
 }; // end of parts
 
-const split = register('split', (number, callback, pat) => {
-  let a = []
-  for(let i=0;i<number;i++) a.push(pat.withValue((v)=>(Array.isArray(v)?v[i]:(i==0?v:undefined))));
-  return callback(a);
- });
+const split = register('split', (deflt, callback, pat) => 
+  callback(deflt.map((d,i)=>pat.withValue((v)=>Array.isArray(v)?(i<v.length?v[i]:deflt[i]):(i==0?v:deflt[i])))));
 
 stack(
   "<~@2 intro@16 verse@66 intro@16 verse@66 intro@16 solo@32 verse@66 intro@16 solo@32 ~@4>".pickRestart(
   {intro: "<theme@16>", 
    verse: "<arp1@6 chords@8 arp2@8 arp1@6 chords@8 arp1@6 chords@8 arp3@8 chords@8>",
-   solo: "<lick1 lick2 lick2:-2 lick1:-5 lick1:-7 lick2:-7 coda@2>/4"}).split(2,(x)=>x[0].pickRestart(parts).transpose(x[1]))
+   solo: "<lick1 lick2 lick2:-2 lick1:-5 lick1:-7 lick2:-7 coda@2>/4"}).split([0,0],(x)=>x[0].pickRestart(parts).transpose(x[1]))
   .note().s("gm_electric_guitar_jazz:0").clip(1).release(0.4).gain(0.6).color('yellow'),
 
   "<~@2 ~@16 0@66 ~@16 0@66 ~@48 0@66 ~@48 ~@4>".pickRestart([
