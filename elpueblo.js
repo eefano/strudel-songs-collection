@@ -23,11 +23,22 @@ const guitar = (strums,fingers,tuning=standardtuning) =>
 
 stack(
   guitar("<d [d@2 u]>*4",
-         "<0@2 1 2 1 3>/2".pickRestart(["<Am C Dm E7>*2","<Dm G7 C F>*2","<Dm E7 Am A7>*2","<Dm E7 [Am E7] Am>*2"]))
+         "<0@4 1 2 1 3 4@2>/2".pickRestart(
+           ["<Am C Dm E7>*2","<Dm G7 C F>*2","<Dm E7 Am A7>*2","<Dm E7 [Am E7] Am>*2","<Dm B7 Am E7>"]))
   
-    .s("gm_acoustic_guitar_steel:2").clip(1).release(0.4).gain(0.4),
+    .s("gm_acoustic_guitar_steel:2").clip(1).release(0.4).gain(0.4).room(0.6),
 
-  "<0@2 ~@4>/2".pickRestart(["<0@5 0 2@5 2 4@2 4 3@2 2 1@5 -3>*12"]).n().scale("a5:minor").s("gm_ocarina").clip(0.95).gain(0.60)
+  "<~@2 0@2 1 2 1 3 4@2>/2".pickRestart([
+    "<0@5 0 2@5 2 4@2 4 3@2 2 1@5 <-3 4>>*12", 
+    "<5@5 2 1@5 5 4@2 3 4@2 1 0@5 4>*12", 
+    "<3@5 0 g#5@5 3 2@2 1 2@2 3 4@2 d#6 4@2 6>*12",
+    "<3@5 0 g#5@5 3 2@2 1 0@2 g#5 0@5 0>*12",
+    "<3@2!2 ~ 3 3@2!2 ~ 3 d#6@2!2 ~ d#6 d#6@2!2 ~ d#6 4@2!2 ~ 4 4@2!2 ~ 4 4@2!2 ~ 4 4@2!2 ~ ~>*12",
+  ]).scale("a5:minor").note().clip(0.95).color('yellow')
+   .layer(x=>x.s("gm_ocarina").gain(0.55).room(0.6)
+         ,x=>x.transpose(-24).attack(0.01).release(0.1).s("gm_choir_aahs:3").gain(0.65).room(0.5)),
 
-).cpm(110/4).room(0.4)//.pianoroll()
+  "<0@2 ~@8>/2".pickRestart(["<b@2!2 ~ b b@2!2 ~ b b@2 b b@b b@2!2 ~ <b ~>>*12"]).s("crow").color('red').room(2).gain(0.8)
+
+).cpm(95/4)//.pianoroll()
 
