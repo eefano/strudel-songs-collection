@@ -78,7 +78,7 @@ const parts =
 }; // end of parts
 
 const split = register('split', (deflt, callback, pat) => 
-  callback(deflt.map((d,i)=>pat.withValue((v)=>Array.isArray(v)?(i<v.length?v[i]:deflt[i]):(i==0?v:deflt[i])))));
+  callback(deflt.map((d,i)=>pat.withValue((v)=>Array.isArray(v)?(i<v.length?v[i]:d):(i==0?v:d)))));
 
 stack(
   "<~@2 intro@16 verse@66 intro@16 verse@66 intro@16 solo@32 verse@66 intro@16 solo@32 ~@4>".pickRestart(
