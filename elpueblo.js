@@ -35,10 +35,11 @@ stack(
     "<3@5 0 g#5@5 3 2@2 1 0@2 g#5 0@5 0>*12",
     "<3@2!2 ~ 3 3@2!2 ~ 3 d#6@2!2 ~ d#6 d#6@2!2 ~ d#6 4@2!2 ~ 4 4@2!2 ~ 4 4@2!2 ~ 4 4@2!2 ~ ~>*12",
   ]).scale("a5:minor").note().clip(0.95).color('yellow')
-   .layer(x=>x.s("gm_ocarina").gain(0.55).room(0.6)
-         ,x=>x.transpose(-24).attack(0.01).release(0.1).s("gm_choir_aahs:3").gain(0.65).room(0.5)),
+   .layer(x=>x.s("gm_ocarina").gain(0.6).room(0.6)
+         ,x=>x.transpose(-24).attack(0.01).release(0.1).s("gm_choir_aahs:3").gain(0.8).room(0.5)),
 
-  "<0@2 ~@8>/2".pickRestart(["<b@2!2 ~ b b@2!2 ~ b b@2 b b@b b@2!2 ~ <b ~>>*12"]).s("crow").color('red').room(2).gain(0.8)
+  "<0@2 ~@8>/2".pickRestart([note("<b@2 f@2 ~ b b@2 f@2 ~ b b@2 b b@b b@2 f@2 ~ <b ~>>*12")])
+      .clip(0.90).s("gm_applause:3").color('red').room(2).gain(0.6)
 
 ).cpm(95/4)//.pianoroll()
 
