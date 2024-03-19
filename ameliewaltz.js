@@ -1,3 +1,5 @@
+
+setDefaultVoicings('legacy')
 stack(
   n("[0@2 ~, ~ [[1,2,3] ~]!2]")
   .chord("<[Dm Am]!2 [F C]!2>/4")

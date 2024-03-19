@@ -1,4 +1,5 @@
 // "Oh" (By Tim Smith of Spratleys Japs)
+setDefaultVoicings('legacy')
 const ln = 24;
 const cresc = saw.range(0.4,0.7).slow(ln*2);
 const chrds = "G#@4 F#@2 B@3 E A@2 D G@2 A G@4 A G@4 G# C# F# B E A@2 B A@2 C D#@6 F@2 D#@4".slow(ln);

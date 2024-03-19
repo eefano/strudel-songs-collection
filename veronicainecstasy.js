@@ -1,6 +1,7 @@
 // "Veronica In Ecstasy" (Chorus)
 // song @by Tim Smith (of Cardiacs)
 // script @by eefano
+setDefaultVoicings('legacy')
 const chrds = "<B [F# A] [C G] [D C#] [E A] [B C#] [Fm A#] [E A] [A# Fm] [E F#] [E F#]>";
 const meldy = `[[f#6]*3 [f#6 [~ ~ f#6]]]  [[f#6]*3 [[f#6 e6 ~] e6]]
                [[e6 e6 [e6 f#6]] [[g6 ~ d6] d6]]  [[d6 d6 [e6 f#6]] [g#6 f6 c#6]]

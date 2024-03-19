@@ -1,4 +1,5 @@
 // old mcdonalds has bad samples
+setDefaultVoicings('legacy')
 const beast = ["crow","space","gm_bird_tweet","space:4","clash","space:1"]
 const bsequ = "<~@2 0 ~@3 1 0 ~@3 2 1 0 ~@3 3 2 1 0 ~@3 4 3 2 1 0 ~@2>".pick(beast)
 const chrds = "F [A# F] [F C] [F@3 ~]";

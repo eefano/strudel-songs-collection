@@ -1,6 +1,7 @@
 // "The Rhythm Of The Night" - Work In Progress
 // song @by Corona
 // script @by eeefano
+setDefaultVoicings('legacy')
 const as = register('as', (mapping, pat) => { mapping = Array.isArray(mapping) ? mapping : [mapping];
   return pat.fmap((v) => { v = Array.isArray(v) ? v : [v, 0];
     return Object.fromEntries(mapping.map((prop, i) => [prop, v[i]])); }); });

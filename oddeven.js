@@ -1,7 +1,7 @@
 // "Odd Even" (Work In Progress)
 // song @by Cardiacs
 // script @by eefano
-
+setDefaultVoicings('legacy')
 const k = 0.01;
 
 stack(

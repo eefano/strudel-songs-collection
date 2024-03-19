@@ -1,7 +1,7 @@
 // "Cabinet" (work in progress)
 // song @by Spratleys Japs
 // script @by eefano
-
+setDefaultVoicings('legacy')
 function arr(p,l) { return [l,p.slow(l)]; }
 
 const h1 = arr(`D@8 A F@3`,24/2);

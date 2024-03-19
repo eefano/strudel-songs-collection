@@ -1,6 +1,7 @@
 // "The Everso Closely Guarded Line (Coda)" - Work In Progress
 // song @by Cardiacs
 // script @by eefano
+setDefaultVoicings('legacy')
 const epic = "<D Dm Am D Gm C F Am A#>*9";
 const mels ={0:"d4@2 a d4 g c4 f a d4"
             ,1:"a@7 c4@3 d4@6 e4@2 c4@7 d4@2"

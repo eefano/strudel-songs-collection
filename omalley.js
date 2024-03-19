@@ -1,6 +1,7 @@
 // "O'Malley, Former Underdog" (work in progress)
 // song @by Deerhoof
 // script @by eefano
+setDefaultVoicings('legacy')
 const crdpart = "<~@6 0@17 1@4 0@17 1@4 2@10>".pickRestart(
 ["< C@2 D@2 [[C ~]!3 D@2 [D ~] D@2]@2 G@2 D@3 Am G D A D@2 >"
 ,"< Em@2 D@2 >"

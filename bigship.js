@@ -1,7 +1,7 @@
 // "Big Ship (Coda)"
 // song @by Cardiacs
 // script @by eefano
-
+setDefaultVoicings('legacy')
 const progr = "<Am!2 D F Am D@2 Am!2 A# Am E@2 C F Am D@4>".fast(2);
 const anchr = "<A5 F5 F5 F5 F5 G5@2 A5 F5 G#5 F5 E5@2 E5 F5 F5 G5@4>".fast(2);
 

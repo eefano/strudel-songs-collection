@@ -1,9 +1,7 @@
-
-
+setDefaultVoicings('legacy')
 setcps(130/60)
+
 let tempo = sine.segment(16).slow(9)
-
-
 
 stack(cps(tempo.mul(20/60).add(130/60)).gain(0),
 

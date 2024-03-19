@@ -1,3 +1,4 @@
+setDefaultVoicings('legacy')
 const k = 0.01;
 
 stack(

@@ -1,5 +1,6 @@
 // "The Cardiacs Cadence"
 // script @by eefano
+setDefaultVoicings('legacy')
 const magic = "<G@3 Bm E@3 G#m C#@3 Fm A#@3 Dm>";
 
 stack(

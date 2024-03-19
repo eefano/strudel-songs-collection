@@ -1,6 +1,7 @@
 // "Appealing to Venus" 
 // song @by The Sea Nymphs
 // script @by eefano
+setDefaultVoicings('legacy')
 const chords = `<Cm@2 Ab@2 Db@2 Cm F Bb C@2 F Bb C@2 F Bb Eb Dm [Cm Dm] [Eb ~] Eb Dm [Cm Dm] [Eb ~]
                 C@2 Ab Eb Ab A E B Db Cm [Bbm Cm] [Db ~] Db Cm [Bbm Cm] [Db ~]>/2`
 stack( 

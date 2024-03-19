@@ -1,3 +1,5 @@
+setDefaultVoicings('legacy')
+
 const chrds = "A@2 E@2 A F#m B@2 E@2 A ~ F#@4 A@2 ~ F#@4 ~@2".slow(25/4);
 
 stack(

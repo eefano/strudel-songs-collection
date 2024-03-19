@@ -1,5 +1,6 @@
-
 // HAPPY BIRTHDAY
+setDefaultVoicings('legacy')
+
 const chrds = "F@3 C@6 F@6 Bb@3 F@2 C F@3".slow(8);
 
 stack(
