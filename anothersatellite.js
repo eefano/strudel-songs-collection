@@ -22,7 +22,8 @@ vox: "<~@3 0:0.6@8 1 2 1 3@1.5 ~!2>/16".split([0,1],(y)=>y[0].pickRestart([
   `<~@4 e4@4 e4@3 d4 db4@2:1 b3@2:1 a3@4:1 a4@3 a4!2 e4 e4@3:1 d4:1 c4@2>*2`,
   `<~@4 d4@4 d4@3:1 c4:1 b3@2 a3@2:1 c4@4:1:4 b3@4:1:-1 ~@4>*2`,
   `<~@4 [d4:1 e4:1 d4:1 c4:1 b3:1 a3]@12 c4:1:4@8 d4:1:2@8 a3:1:-4@8 ~@8>*2`,
-]).split([0,.9,0],(x)=>note(x[0]).clip(x[1]).penv(x[2])).patt('.2').s('gm_oboe').lpf(30000).room(.5).gain(1.7).velocity(y[1]))
+]).split([0, .9, 0], (x) => note(x[0]).clip(x[1]).penv(x[2])).patt('.2').s('gm_oboe').lpf(30000).room(.5).gain(1.7).velocity(y[1]))
+  .superimpose(x=>x.late(2).gain(0.5).pan("<0 1>/16").room(1.5))
 
 faf: "<~@62 [0,1]@8 >/4".pickRestart([
   `<~ d4:.5!2 d4@2:1 c4:.5!3 c4 ~ f4 ~ d4@2:1 c4:1 bb3 ~@2 d4:0.5 d4@2:1 c4:.5 c4:1 bb3:.5 bb3@2:1 f3@2:1 c4:1:4@3 ~ >*2`.pan(.3),
