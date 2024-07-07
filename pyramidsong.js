@@ -1,4 +1,4 @@
-// "Pyramid Song" (wip)
+// "Pyramid Song (wip)"
 // song @by Radiohead
 // script @by eefano
 setcps(104/60/4)
@@ -17,11 +17,24 @@ piano: "<[i1 i2 i3 i4] ooooh [v1 v2]!4 ooooh@2 [v1 v2]!3 [v1 v3] [v3 v2] [i1 i2 
   v1:`<[[X X]@3 Y@2 [Z Z]@3] [[Z Y]@3 Y@2 [X X]@3]>/2`,
   v2:`<[[V V]@3 W@2 [W W]@3] [[Y Y]@3 Y@2 [Y Y]@3]>/2`,
   v3:`<[[V V]@3 W@2 [W W]@3] [[Y Y]@3 X@2 [X X]@3]>/2`,
-  end:`<X:1>/4`, 
- }).split([0,.5],(x)=>x[0].pickOut(chr).velocity(x[1])).note().piano().gain(0.8).attack(0.02).room(.6)
+  end:`<X:1>/8`, 
+ }).split([0,.5],(x)=>x[0].pickOut(chr).velocity(x[1])).note().piano().gain(0.8).room(.6)
 
 ooooh: "<~ 0 ~@4 0@2 ~@8>/8".pickRestart([
   "<f#5@11 e5:-2 g#5:4 e5:-4 [f#5:2 ~] [~ g#5 e5] f#5@4 g#5 f#5 e5 d5 c#5@5 ~@3>*4"
   ]).split([0,0],(x)=>x[0].penv(x[1])).patt(0.04).s("triangle").attack(.08).release(.08).note().vmod(.1).vib(5).gain(0.3).lpf(2000).room(1.5)
 
-$: s("<rd*4>").bank('RolandMT32').gain(0.3).hpf(8000).hush()
+drums: "<~@6 [~@15 0@15 1@2] [2,3]@8 3>/8".pick([
+  "<[bd,rd] ~ [~ sf*3] [bd,rd] ~ [~ sf*3] [bd,rd] ~ ~ [~ sf*3] [bd,rd] ~ [~ sf*3] [bd,rd] ~ [~ sf*3]>*8",
+  "<[sd sf bd] [sf sd sd]>*4",
+  "<[rd*4],[<~ ~ ~ bd ~ bd ~ ~ bd ~ bd ~ ~ bd ~ bd> <~!14 sf!2> <~ sd bd ~ sd ~ sd bd ~ sd ~ ~ sd ~ sd sd>]*4>",
+  "<cr,bd>/8",
+]).pickOut({
+  bd: s('bd').bank('Linn9000').lpf(1000),
+  sd: s('sd').bank('RolandMT32').velocity(.5),
+  sf: s('sd').bank('RolandMT32').velocity(.2),
+  rd: s('rd').bank('Linn9000').velocity(0.3).hpf(8000),
+  mt: s('mt').bank('RolandMT32'),
+  lt: s('lt').bank('RolandMT32'),
+  cr: s('cr').bank('Linn9000').speed(0.4).velocity(0.3).hpf(4000),
+}).room(.2).gain(0.5)
