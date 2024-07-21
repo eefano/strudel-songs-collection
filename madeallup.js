@@ -15,11 +15,19 @@ orch: "<a@38 b@38>".pickRestart({
        A!2 [A E] [E@3 F#]@2 F# C#    G#!2 [G# D#] [D#@3 F]@2 F C>`
 }).split([0,0],t=>stack(
  
-  chord(t[0]).anchor("<d5 d#5>/76").voicing().s('piano').room(.4).gain(.35).color('yellow'), 
+  chord(t[0]).anchor("<b4@7 b4@6 b4@5 c5@6 d5@7 c#5@7>").transpose("<0 1>/38").voicing()
+  .s("gm_piano").room(.4).gain(.6).color('yellow')
+  .superimpose(x=>x.late(0.1).attack(.1).velocity(.6).pan(.2)), 
+
+  n(t[1].pickRestart(["<0>/2"])).chord(t[0]).mode('root').anchor('e2').voicing()
+  .s("gm_electric_bass_finger").lpf(500).gain(1.3).color('cyan')
 ))
 mel: "<a@76>".pickRestart({
   a: note(`<c4@2 c4!3 b3 b3@2 b3 a3 [a3!2]@4
        [c4!2]@4 a3 c4 c4@2 c4 d#4 d#4@2
        [f4!2]@4 f4 c4 [c4!2]@4
        d#4@2 f4@2 f4 c4 c4@2 a#3@2 d#4@10 ~@20>*2`).transpose("<0 1>/38")
-}).s('triangle').attack(0).decay(0.1).sustain(.8).release(0).clip(0.97).gain(1).lpf(5000)
+}).s("triangle")
+  .adsr([0,.1,.8,0]).clip(0.97).gain(1).lpf(5000)//.pdec("<0@23 1@15>")
+  .superimpose(x=>x.transpose(12).velocity(.7).speed(1.002).pan(.4).room(.7),
+               x=>x.transpose(24).velocity(.3).speed(.998).pan(.6).room(.7))
