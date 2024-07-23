@@ -7,23 +7,35 @@ const split = register('split', (deflt, callback, pat) => callback(deflt.map((d,
     return (i==0 && isobj) ? {...v,value:result} : result; }))));
   setCps(115/60)
   
-  synt: "<a@27 b@70 b@75 ~@4>".pickRestart({
+  synt: "<a@27 b@70 b@75 ~@56 b@70 b@75 ~@56>".pickRestart({
     a: "<0@6 0@6 0@7 0@7 0@8 0@10 0@10>*2",
     b: "<0@6 0@6 0@6 0@7 0@7 0@6 0@6 0@6 0@6 0@7 0@7 0@6 0@8 0@10 0@8 0@10 0@8 0@10 0@10 0@10>*2"
       
   }).pickRestart(["<0 4 7 8 10 11 9 12 14 12>*2"])
-    .scale("c#4:major").note().s("gm_drawbar_organ").room(.3).lpf(1200)
+    .scale("c#4:major").note().s("gm_drawbar_organ:4").room(.3).lpf(1200).gain(0.7).color('yellow')
   
-  bass: "<a@3>".pickRestart({
-    a: "<[0 <7!2 [7:.8 7:.9]>]>"
-  }).split([0,1],s=>n(s[0]).scale("c#2:major").clip(s[1])).s("gm_electric_bass_finger:2").lpf(400).gain(2).color('cyan')
-   
-  drums: "<a@27 [a,b]@24 [a,b,c]@5 [a,d]@28 [a,c,d]@2 [a,d]@86 ~@4>".pickRestart({
-    a: "<bd>", b: "<~ ~ sd ~>", c:"<[~ [sd sd]] ~@4>", d:"<~ sd>"
+  bass: "<a@172 b@56 a@145 b@56>".pickRestart({
+    a: "<[<c#2!3 [c#2:.8 c#2:.9] c#2> <c#3!4 [c#3:.8 c#3:.9]>]>".s("gm_electric_bass_finger:2"),
+    b: "<~@2 c#2@4 c#2@2 a#1@6 c#2@2 g#1@8 d#2@8 c2@8 f2@8 c#2@8>".s("triangle")
+  }).split([0,1],s=>note(s[0]).clip(s[1])).lpf(400).gain(1.5).color('cyan')
+
+  wind: "<~@172 a@56 ~@145 a@56>".pickRestart({
+    a: "<~@2 C#:g#2@4 G#:g#2@2 A#m:g#2@6 C#:g#2@2 G#:g#2@8 D#:d#2@8 Cm:d#2@8 F7:d#2@8 C#:d#2@8>"
+  }).split([0,0],s=>chord(s[0]).anchor(s[1])).mode('above').voicing()
+    .s("gm_church_organ").gain(0.8).room(.7).color('green')
+
+  voic: "<~@172 a@56 ~@145 a@56>".pickRestart({
+      a: `<~ c#4 d#4@2 c#4@2 [c4 c#4] [d#4 f4] c#4@2 d#4@2 ~ [~ c#4] [c4 c#4] [d#4 f4] d#4 g#3@5
+           ~ [~ d#4] f4@2 d#4@2 d4 d#4 ~ [~ d#4] f4@2 [g4 f4] [d#4 f4] d#4@2
+           ~ [~ d#4] f4@2 d#4@2 [f4@3 d#4@3]@3 f4@9 >`
+  }).note().s("gm_oboe").color('purple').gain(1.5).lpf(3000).release(.1).room(.2)
+                                
+  drums: `<a@27 [a,b]@24 [a,b,c]@5 [a,d]@56 [a,d,e]@2 [a,d]@20 [a,d,f]@2 [a,d]@24 [a,d,g]@2 [a,d]@10 
+           ~@56 [a,d]@145 ~@56>`.pickRestart({
+    a: "<bd,hh>", b: "<~ ~ sd ~>", c:"<[~ sd*2] ~@4>", d:"<~ sd>", e:"<~ [~ sd*2]>", f:"<~ [[~ sd] [sd ~]]>", g:"<~ [~ sd]>"
   }).pickOut({
     bd: s('bd').lpf(800).velocity(1.1),
     sd: s('sd').velocity(.7),
-    rd: s('rd').velocity(0.3).hpf(8000),
+    hh: s('hh').velocity(0.1).hpf(8000),
     cr: s('cr').speed(0.7).velocity(0.1).hpf(6000),
   }).bank("Linn9000").room(0.2).gain(0.8).rsize(4)
-  
