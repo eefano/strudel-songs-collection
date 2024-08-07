@@ -1,6 +1,7 @@
 // "The Everso Closely Guarded Line (Coda)" - Work In Progress
 // song @by Cardiacs
 // script @by eefano
+setCps(93.2/60*3/4/9)
 setDefaultVoicings('legacy')
 const epic = "<D Dm Am D Gm C F Am A#>*9";
 const mels ={0:"d4@2 a d4 g c4 f a d4"
@@ -18,12 +19,11 @@ stack
 ,"<~ ~ ~ ~ 5 5 6 7@2 [2@4 ~] 5 5 6 7 [[5@25 ~@29],8]@2>".pickRestart(mels).note().s("gm_tenor_sax").midichan(2).color("yellow")
 ,"<1@14 [[4@25 ~@29],8]@2>".pickRestart(mels).add(24).note().s("gm_ocarina").gain(0.3).color("red")
 ,"<9@14 ~@2>".pickRestart(mels).n().chord(epic).anchor("C4").voicing().s("<gm_reed_organ@10 gm_church_organ:1@4 ~@2>").gain("<0.25@10 0.4@4 ~@2>").color("green").midichan(3)
-,"<0@14 [[4@25 ~@29],8]@2>".pickRestart(mels).sub(24).note().s("gm_electric_bass_finger").lpf(300).gain(0.6).color("blue")
-,"<0 [0@2 1@2 0 2@4] 0!12 3@2>".pickRestart(
+,"<0@14 [[4@25 ~@29],8]@2>".pickRestart(mels).sub(24).note().s("gm_electric_bass_finger").lpf(300).gain(0.75).color("blue")
+,"<0 [0@2 1@2 0 2@4] 0!4 [0@2 1@2 0 2@4] 0!2 [0@26 ~] 0!2 [0@2 1@2 0 2@4] 0 3@2>".pickRestart(
   ["<rd*3 , <<<bd!4 sd> sd> ~ bd>*3 , cr/9>*9"
   ,"[[sd [bd,cr] ~]!2@3]*9/2"
-  ,"<[sd,[~ sd@10]] [[bd,cr] ~]!2@2 bd [sd,[~ sd@10]] mt lt >*9*3"
-   
+  ,"<[sd,[~ sd@10]] [[[bd,cr] ~]!2]@4 bd [sd,[~ sd@10]] mt lt >*9*3"
   ,"< [<[sd,[~ sd@10]]!2 ~> <[bd,cr]!2 [sd,[~ sd@10]]> [bd,cr]!2 ~ [bd,cr] ~ [bd,cr,cr] ~]*3 ~*4 >" 
   ]).pickOut({rd:/*note(51).*/s('rd').velocity(0.1).pan(0.4),
                bd:/*note(35).*/s('bd').velocity(0.5),
@@ -32,5 +32,5 @@ stack
                 mt:s('mt').velocity(0.4).pan(0.6),
                 lt:s('lt').velocity(0.4).pan(0.8)
 }).bank("Linn9000").gain(0.7).color("cyan").midichan(10)
-).cpm(93.2*6/8/9).room(0.6)//.midi()//.pianoroll()
+).room(0.6)//.midi()//.pianoroll()
  

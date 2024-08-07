@@ -1,6 +1,7 @@
 // "Swim And Sleep Like A Shark" (Work In Progress)
 // song @by Unknown Mortal Orchestra
 // script @by eefano
+setCps(123/60)
 Pattern.prototype.enumerate = function () {
   const pat = this.sortHapsByPart()
   return new Pattern(state => {
@@ -25,7 +26,7 @@ const parts =
 "~ ~ ~ ~  ~ ~ ~ ~ ~ ~ ~  ~ ~  ~ ~  ~  ~  ~  ~  ~",
 "7 7 ~ 7  ~ 7 5 5 ~ 4 ~  9 9  ~ 9  ~  ~ 11  ~ 11",
 "~ ~ ~ ~  ~ ~ ~ ~ ~ ~ ~  ~ ~  ~ ~  ~  ~  ~  ~  ~",
-).warp("t@2 t!4 t@2!2 t!2 t@2!3 t!4 t@2 t@3 t t@4").slow(16)
+).warp("t@2 t!4 [t!2]@4 t!2 [t!3]@6 t!4 t@2 t@3 t t@4").slow(16)
 ,arp1: tablature(
 "~ ~ ~ 0 ~ ~ ~ 0 ~ ~ ~ 0",
 "~ ~ ~ ~ ~ ~ ~ ~ ~ 0 ~ ~",
@@ -98,4 +99,4 @@ stack(
     "<mt sd*4 sd lt>*2",
     "<bd ~ bd*2 bd*2>,sd,hh*2"])
   .s().bank("Linn9000").clip(1).gain(0.08).color('cyan')  
-).cpm(123).room(0.3)
+).room(0.3)

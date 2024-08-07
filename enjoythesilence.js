@@ -1,3 +1,7 @@
+// "Enjoy The Silence (coda)"
+// song @by Depeche Mode
+// script @by eefano
+setCps(113/60/4)
 await samples({'gtr': 'gtr/0001_cleanC.wav'}, 'github:tidalcycles/Dirt-Samples/master/');
 
 const melodia   = x => x.note().s("ocarina").gain(0.6).clip(1).release(0.1)
@@ -14,6 +18,4 @@ stack(
 "<-4 -2 0 -1>".struct("[[x ~]!2 x x@0.5 [x ~]!2 x@0.5 [x ~]!2]").scale(scala).apply(basso),
 s("bd!4,[~ sd]!2,[~ hh!2 hh*2]!2").apply(ritmo),
 //s("hh!4").apply(ritmo)
-).cpm(113/4)
-
-
+)
