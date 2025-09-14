@@ -1,6 +1,6 @@
 // "Human Performance" (work in progress)
-// @song by Parquet Courts
-// @script by eefano
+// song @by Parquet Courts
+// script @by eefano
 setcps(110 / 60 / 2)
 
 const song = "<0@2 1@11 1@11 1@6 2@3 3@24 4@4 1@11 1@11 1@6 2@3 3@24 4@4>"
