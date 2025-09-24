@@ -32,23 +32,24 @@ const ch0rds = {
   o: "<C#@6 D#@4 C#@4 G@4 E B F# B>",
   p: "<D#@4 C#@4 G@4 E B F# B>",
   q: "<C#@6>" }
-const colors= {i:'white',j:'yellow',k:'cyan',l:'magenta',m:'red',n:'green',o:'blue',p:'brown',q:'grey'}
+const colors= {i:'white',j:'yellow',k:'cyan',l:'green',m:'red',n:'salmon',o:'magenta',p:'orange',q:'lightgrey'}
 
 const split = register('split', (deflt, callback, pat) => callback(deflt.map((d,i)=> pat.withValue((v)=>{
   const isobj = v.value !== undefined; const value = isobj ? v.value : v;
   const result = Array.isArray(value)?(i<value.length?value[i]:d):(i==0?value:d);
   return (i==0 && isobj) ? {...v,value:result} : result; }))));
 
-$: beez.pickRestart(melody).split([0,0],s=>note(s[0]).penv(s[1])).patt(.1).clip(.98).color(beez.pick(colors))
-  .layer(x=>x.s("gm_overdriven_guitar:3").vib(10).vibmod(.09).delay(.4).dt(.3).dfb(.70),
+$: beez.pickRestart(melody).split([0,0],s=>note(s[0]).penv(s[1])).patt(.1).clip(.98)
+  .layer(x=>x.s("gm_overdriven_guitar:3").vib(10).vibmod(.09).delay(.4).dt(.2).dfb(.30).gain(1),
          x=>x.transpose(12).s("gm_pad_bowed:1").gain(.4))
-$: chord(beez.pickRestart(ch0rds)).anchor('F4').voicing().color(beez.pick(colors))
-  .layer(x=>x.s("gm_church_organ:3").pan(.4),
-         x=>x.s("gm_church_organ:2").pan(.6)).gain(.38)
-$: beez.pickRestart(ch0rds).rootNotes(2).note().color(beez.pick(colors))
+$: chord(beez.pickRestart(ch0rds)).anchor('F4').voicing()
+  .layer(x=>x.s("gm_church_organ:3").pan(.40).gain(.4),
+         x=>x.s("gm_brass_section:1").pan(.55).gain(.7))
+$: beez.pickRestart(ch0rds).rootNotes(2).note()
   .s("gm_electric_bass_pick:2").lpf(200).gain(.6)
          
-$: s("<hh>").gain(.35)
+$: s("<hh>").gain(.3)
 all(x => x.room(.2)
+    .color(beez.pick(colors))
  // .ribbon(900,20)
 )
