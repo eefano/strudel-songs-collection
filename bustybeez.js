@@ -39,10 +39,16 @@ const split = register('split', (deflt, callback, pat) => callback(deflt.map((d,
   const result = Array.isArray(value)?(i<value.length?value[i]:d):(i==0?value:d);
   return (i==0 && isobj) ? {...v,value:result} : result; }))));
 
-$: beez.pickRestart(melody).split([0,0],s=>note(s[0]).penv(s[1])).patt(.1).s("gm_overdriven_guitar:3").color(beez.pick(colors))
-$: chord(beez.pickRestart(ch0rds)).anchor('F4').voicing().s("gm_church_organ:2").gain(.4).color(beez.pick(colors))
-
-$: s("<hh>").gain(.3)
-all(x => x.room(.3)
+$: beez.pickRestart(melody).split([0,0],s=>note(s[0]).penv(s[1])).patt(.1).clip(.98).color(beez.pick(colors))
+  .layer(x=>x.s("gm_overdriven_guitar:3").vib(10).vibmod(.09).delay(.4).dt(.3).dfb(.70),
+         x=>x.transpose(12).s("gm_pad_bowed:1").gain(.4))
+$: chord(beez.pickRestart(ch0rds)).anchor('F4').voicing().color(beez.pick(colors))
+  .layer(x=>x.s("gm_church_organ:3").pan(.4),
+         x=>x.s("gm_church_organ:2").pan(.6)).gain(.38)
+$: beez.pickRestart(ch0rds).rootNotes(2).note().color(beez.pick(colors))
+  .s("gm_electric_bass_pick:2").lpf(200).gain(.6)
+         
+$: s("<hh>").gain(.35)
+all(x => x.room(.2)
  // .ribbon(900,20)
 )
