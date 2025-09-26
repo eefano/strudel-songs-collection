@@ -5,17 +5,20 @@ setcps(110 / 60 / 2)
 
 const song = "<0@2 1@11 1@11 1@6 2@3 3@24 4@4 1@11 1@11 1@6 2@3 3@24 4@4>"
 
-const ed = "[0,[~ 1@40],[~@2 3@40],[~@3 5@40]]"
+const zero = register('zero', (pat) => pat.withValue((v)=>0))  
+
 const chseq = song.pickRestart(["~","<B@2 F#m@2 E@2 D@2 D A@2>","<B@3>".struct("x*4"),
                            "<A@3 <F#m!2 E D B F#m E D>@9>*4".struct("x*4"),"<F#m@4>"])
 
+const cs = zero(chseq).pickRestart(["<[0,[~ 1@40],[~@2 2@40],[~@3 3@40]]@2>"])
+const ds= "<0@3 0@2 0 0@2 0!2 0@2>*4".pickRestart(["[0,1,2,3]"])
+
 const cln = x=>x.s("gm_electric_guitar_clean:2").lpf(1800).gain(.7)
-const dst = x=>x.s("gm_electric_guitar_clean:4").dist("5.5:.075").hpf(350).lpf(1000)
+const dst = x=>x.s("gm_electric_guitar_clean:2").hpf(100).lpf(1800).clip(1).gain(.7)
 
-const zero = register('zero', (pat) => pat.withValue((v)=>0))  
 
-$: n(zero(chseq).pickSqueeze([ed])).chord(chseq)
-  .voicing().mode("root").pickF(song,[cln,cln,cln,dst,cln])
+$: n(song.pick([cs,cs,ds,ds,cs])).chord(chseq).mode('above').anchor('e3')
+  .voicing().mode("root").pickF(song,[cln,cln,cln,dst,cln])  ._pianoroll()
 
 $: n(song.pickRestart(["~", "<~ 8 8 7 9 8 ~ ~ ~ 7 7 5 8 7 ~ ~ ~ 8 8 7 9 8 7 6 7 5 ~ 4 7 5 ~ ~ ~ 7 7 6 7 2@2 ~@5>*4",
                        "<7@2 ~ [7 5] [9 7]@2 ~@100>*4",
@@ -28,9 +31,15 @@ $: n(song.pickRestart(["<~ [~ 0 2 2b]>",
   .scale("a2:major").s("gm_electric_bass_finger:3").clip(.97).lpf(350).gain(1).color('cyan')
 
 $: song.pickRestart(["<~>","<rd*4,[bd sd]>","<rd*4,[sd bd]*2>",
-                     "<cr@3 cr@9>*4,<sd ~ bd sd ~ sd!7>*4","~"]).s().gain(.6).hpf(800).lpf(3000).color('magenta')
+                     "<cr@3 cr@9>*4,<sd ~ bd sd ~ sd!7>*4","~"]).pickOut({
+          rd:s("<r8_rd:1>").speed(1.1).hpf(4000).velocity(.1),
+          bd:s('linn9000_bd').velocity(.55).lpf(500),
+          sd:s('linn9000_sd').velocity(.55).hpf(200),
+          cr:s('linn9000_cr').velocity(.1).pan(.55),
+          mt:s('linn9000_mt').velocity(.3).pan(.6),
+          lt:s('linn9000_lt').velocity(.2).pan(.7)}).speed(.94).gain(.6) .color('magenta')
 
 all(x => x
-       .room(.1)
-     //.ribbon(24*2,1*8)
+     .room(.3)
+    .ribbon(24*2,1*8)
 )
