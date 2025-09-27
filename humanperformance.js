@@ -41,5 +41,5 @@ $: song.pickRestart(["<~>","<rd*4,[bd sd]>","<rd*4,[sd bd]*2>",
 
 all(x => x
      .room(.3)
-    .ribbon(24*2,1*8)
+    //.ribbon(24*2,1*8)
 )
