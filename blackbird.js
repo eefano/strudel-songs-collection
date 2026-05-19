@@ -19,7 +19,7 @@ const guitar = (strums,fingers,tuning=standardtuning) =>(strums.pickRestart(stru
     ,fingers.pickOut(fingering).gString(4).cut(5).s(stringsamp[4])
     ,fingers.pickOut(fingering).gString(5).cut(6).s(stringsamp[5])]));
 
-const standardtuning = [40,45,50,55,59,64]; // capo 1st fret
+const standardtuning = [40,45,50,55,59,64];
 const velocities = [.4,.35,.4,.3,.4,.4]
 const stringsamp = ["gE","gA","gD","gG","gB","gee"]
 const fingering = 
