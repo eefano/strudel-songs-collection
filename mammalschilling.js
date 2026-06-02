@@ -7,19 +7,19 @@ const split = register('split', (deflt, callback, pat) => callback(deflt.map((d,
 setCps(155/60)
 
 orch: "<a b@2 a [b@11 ~]@2 c e d c>/40".pickRestart({
-  a: "<<F:f3:h D7:g3:i> ~>/5",
-  b: "<F:f3:h@8 Em7:b3:i@12 C:f3:i@8 D7:g3:h@12>",
-  c: "<Bm7:b3:j@8 Em7:b3:k@8 F:g3:j@8 C:f3:k@8 G7:b3:j@4 G7:b3:l@4>".velocity(1.4),
-  d: "<Bm7:b3:j@8 Em7:b3:k@8 F:g3:k@8 C:f3:k@8 D7:f3:j@8 >".velocity(1.6),
-  e: "<<F:f3:h Em7:b3:i C:f3:h D7:g3:i> ~>/5".velocity(1.3),
-}).split([0,0,0],s=>stack(
-   n(s[2].pickRestart({
+  a: "<<F:f3:f1:h D7:f#3:f#1:i> ~>/5",
+  b: "<F:f3:f1:h@8 Em7:b3:b1:i@12 C:e3:g1:i@8 D7:f#3:f#1:h@12>",
+  c: "<Bm7:b3:b1:j@8 Em7:b3:b1:k@8 F:f3:a1:j@8 C:e3:g1:k@8 G7:b3:b1:j@4 G7:b3:b1:l@4>".velocity(1.4),
+  d: "<Bm7:b3:b1:j@8 Em7:b3:b1:k@8 F:f3:a1:k@8 C:e3:g1:k@8 D7:d3:f#1:j@8 >".velocity(1.6),
+  e: "<<F:f3:f1:h Em7:b3:b1:i C:e3:g1:h D7:f#3:f#1:i> ~>/5".velocity(1.3),
+}).split([0,0,0,0],s=>stack(
+   n(s[3].pickRestart({
      h:"<~ [<0@2 2 1>@3 ~]>*2", i:"<~ [<3@2 0 1>@3]>*2",
      j:"<0 2>/2", k:"<1 <0 2>>/2", l:"<2 ~>/8"
-  })).chord(s[0]).anchor(s[1].transpose(-22)).mode('above').voicing()
+  })).chord(s[0]).anchor(s[2]).mode('above').voicing()
     .s("gm_pizzicato_strings:4").gain(1.35).color('green'),
-
-   n(s[2].pickRestart(
+  
+   n(s[3].pickRestart(
      {h:"<[[0,[~ 1@40],[~@2 2@40],[~@3 3@40]] ~@2]>/2",
       i:"<[[3,[~ 2@40],[~@2 1@40],[~@3 0@40]] ~@2]>/2",
       j:"<[[~ 0@3],[~@1 1@3],[~@2 <2 3>@2],[~@3 <3 2>]]>/2",
