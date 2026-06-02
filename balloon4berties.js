@@ -2,10 +2,11 @@
 // song @by Cardiacs
 // script @by eefano
 setcpm(90*3/4)
-
-$: n("0,~ [1,2]!2").chord("<0@4 0@4 0@31 0@31 0@17 1@5 ~@8>".pickRestart([
-  "<B Bm B Bm B G E F# E F# E F# G# F# E F# E B D C# F F# G# F# E F# G# F# E F# E >","<F# E>"]))
-  .anchor("<0@8 0@17 1@4 2@10 0@17 1@4 2@10 0@17 0@5 ~@8>".pickRestart(["<D#3 D3>","<C#3>","<D3 D#3>"]))
+const anch = { B:"D#3", Bm:"D3", G:"D3", E:"B2", 'F#':"C#3",'G#':"D#3", D:"D3", 'C#':"C#3", F:"C3"}
+const chrd = "<0@4 0@4 0@31 0@31 0@17 1@5 ~@8>".pickRestart([
+  "<B Bm B Bm B G E F# E F# E F# G# F# E F# E B D C# F F# G# F# E F# G# F# E F# E >","<F# E>"])
+  
+$: n("0,~ [1,2]!2").chord(chrd).anchor(chrd.pickRestart(anch))
   .mode('above').voicing().s("gm_vibraphone").gain(.25).room(.6)
 
 $: note("<~@8 0@31 0@31 0@17 ~@13>".pickRestart([
