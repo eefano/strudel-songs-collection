@@ -14,11 +14,10 @@ const cs = zero(chseq).pickRestart(["<[0,[~ 1@40],[~@2 2@40],[~@3 3@40]]@2>"])
 const ds= "<0@3 0@2 0 0@2 0!2 0@2>*4".pickRestart(["[0,1,2,3]"])
 
 const cln = x=>x.s("gm_electric_guitar_clean:2").lpf(1800).gain(.7)
-const dst = x=>x.s("gm_electric_guitar_clean:2").hpf(100).lpf(1800).clip(1).gain(.7)
+const dst = x=>x.s("gm_electric_guitar_clean:2").hpf(50).lpf(2000).clip(1).dist("8:0.06").gain(.7)
 
-
-$: n(song.pick([cs,cs,ds,ds,cs])).chord(chseq).mode('above').anchor('e3')
-  .voicing().mode("root").pickF(song,[cln,cln,cln,dst,cln])  ._pianoroll()
+$: n(song.pick([cs,cs,ds,ds,cs])).chord(chseq).mode('below').anchor('c5')
+  .voicing().pickF(song,[cln,cln,cln,dst,cln]).color('green')
 
 $: n(song.pickRestart(["~", "<~ 8 8 7 9 8 ~ ~ ~ 7 7 5 8 7 ~ ~ ~ 8 8 7 9 8 7 6 7 5 ~ 4 7 5 ~ ~ ~ 7 7 6 7 2@2 ~@5>*4",
                        "<7@2 ~ [7 5] [9 7]@2 ~@100>*4",
@@ -35,7 +34,7 @@ $: song.pickRestart(["<~>","<rd*4,[bd sd]>","<rd*4,[sd bd]*2>",
           rd:s("<r8_rd:1>").speed(1.1).hpf(4000).velocity(.1),
           bd:s('linn9000_bd').velocity(.55).lpf(500),
           sd:s('linn9000_sd').velocity(.55).hpf(200),
-          cr:s('linn9000_cr').velocity(.1).pan(.55),
+          cr:s('linn9000_cr').velocity(.2).pan(.55),
           mt:s('linn9000_mt').velocity(.3).pan(.6),
           lt:s('linn9000_lt').velocity(.2).pan(.7)}).speed(.94).gain(.6) .color('magenta')
 
