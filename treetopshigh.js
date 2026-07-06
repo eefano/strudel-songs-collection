@@ -15,11 +15,11 @@ $: song.pickRestart([`<C _ F A _ C A <[C Em A C Em A] [E F A G A G]>@6>`,
 $: song.pickRestart(["~",
   `<d#5 [c#5 b4 _] a4 [b4 c#5 _] d#5 [c#5 b4 _] c5 [b4 a4 _] g#4@12 ~ ~ >*2`, `<e5 [d#5 _ f#4] 
   [f4@3 g4 a4 _] [a4@3 b4 c#5 _] [g#4@3 g4 g#4 _]!2 [c5@3 d5 e5 _] f#5 [c5@3 d5 e5 _] f#5@3 ~>`
-  ]).note().s("gm_oboe:4,gm_drawbar_organ").gain(.8)
+  ]).note().s("gm_oboe:4,gm_drawbar_organ").gain(.75)
 $: song.pickRestart([
   `<e4 e4 [f4 _ f4] e4 c#4 g3 e4 <[g3 _ e3 _ _ ~] [g#3 a3 e4 _ _ ~]>@6>`,"~","~"
-  ]).note().att(.03).rel(.01).s("gm_choir_aahs")
-  .layer(x=>x.transpose(-12).pan(.4).gain(1.2),x=>x.gain(1.4),x=>x.transpose(12).pan(.6).gain(1.4))
+  ]).note().att(.03).rel(.2).s("gm_choir_aahs")
+  .layer(x=>x.transpose(-12).pan(.4).gain(1.1),x=>x.gain(1.3),x=>x.transpose(12).pan(.6).gain(1.3))
 
 $: label("<0@26 ~@11 1@26 ~@23 2@26 ~@53>".pickRestart([
 `<She lived [to _ be] three hun- dre- ed or _ more _ _ ~
@@ -28,5 +28,5 @@ $: label("<0@26 ~@11 1@26 ~@23 2@26 ~@53>".pickRestart([
   A wild [wind _ whipped] her a- way in- to the sky _ _ ~>`,
 `<[We _ will] throw [a _ sur-] pri- ise pa- a- a- _ rty _ _ ~
   But [she _ will] [ne- _ ver] show The wi- ind blowed her high _ _ ~>`
-])).s('hh').note(30).end(0)
+])).s('hh').note("<30@42 33@8 30@6 34 35 36 37@4 30@45 37@4 ~@53>").end(0)
 .pianoroll({ labels: true, fold: false, minMidi: 30, maxMidi: 38, cycles: 4 })
