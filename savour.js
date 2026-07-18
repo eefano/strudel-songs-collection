@@ -1,6 +1,6 @@
 // "Savour" (work in progress)
-// @song by Tim Smith
-// @script by eefano
+// song @by Tim Smith
+// script @by eefano
 setcpm(130 / 2)
 
 const song = "<0@24 0@24 1@21 2@24>"
