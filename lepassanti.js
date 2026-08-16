@@ -30,7 +30,7 @@ $: note(`<~@5 [~ c3]
                        x=>x.s("gm_oboe").gain("<.35 .4 .45 .5>/13")
                   ).jux(early(0.01))
 
-$: chord(chr).anchor("<~ a2 d3 f3>/13").mode('above').voicing().transpose(1).arp(irand(3).seg(2))
+$: chord(chr).anchor("<~ f2 a2 d3>/13").mode('above').voicing().transpose(1).arp(irand(3).seg(2))
   .s("gm_cello:1").gain(.17).room(.6)
 
 //.pianoroll({ labels: false, fold: false, minMidi: 35, maxMidi: 95, cycles: 5 })

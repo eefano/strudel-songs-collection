@@ -15,12 +15,12 @@ reed: chord(ch0rds).mode('above')
     x => x.anchor(song.pickRestart(["f4", "a4", "e4"])).voicing().struct("x").clip(.8)
       .s("gm_cello").att(.15).gain(song.pickRestart([".17",".22",".17"])).rel(.3).hpf(200).room(1.7))
 
-bass: n(song.pickRestart(["[0@4 0 0]/2", "0", "[0@5 0]/2"])).chord(ch0rds).anchor("e2")
+bass: n(song.pickRestart(["[0@4 0 0]/2", "0", "[0@5 0]/2"])).chord(ch0rds).anchor("e1")
   .clip(.9).mode("root").voicing().transpose("<0@61 [0,12] [-1,11] [-3,9] [-5,7] [0,12] [-1,11] [-3,9] 0@25>")
-  .s("gm_electric_bass_finger:2").lpf(300).gain(.7)
+  .s("gm_electric_bass_finger:2").lpf(250).gain(.6)
 
 guit: n(song.pickRestart(["[~ 0 1 2 1 0]/2", "2*2", "[~ ~ 0 _ 1 _]"]))
-  .chord(ch0rds).mode('root').anchor('c4').voicing().s("gm_electric_guitar_clean:2").release(.5).hpf(400).gain(.5)
+  .chord(ch0rds).mode('root').anchor('c3').voicing().s("gm_electric_guitar_clean:2").release(.5).hpf(400).gain(.5)
 
 melo: song.pickRestart([
   `<f4 [[f4@2 e4] d4] c#4 [[c#4@2 d4] e4] f4 [[f4@2 g4] a4] g4 [[g4@2 f4] d#4]

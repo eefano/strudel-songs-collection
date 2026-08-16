@@ -10,7 +10,7 @@ c: "<0@32 1@24>/2".pickRestart([
 "<Bm@3 G Em A Em D G@2 A Em D G A Em>/2",
 "<C#m G A# F E B Em G@3 D# Dm A C#m G B A G A G A G A G>/2"])
  .layer(x=>x.chord().anchor('b4').voicing().s("gm_reed_organ").attack(0.1).release(1.5).room(1).rsize(4).gain(0.4),
-        x=>n("<0!32 [0,1,2,3,4]!24>/2").chord(x).anchor('c3').mode('root').voicing().s("gm_church_organ").room(1).rsize(4).gain(0.4),
+        x=>n("<0!32 [0,1,2,3,4]!24>/2").chord(x).anchor('a#1').mode('root').voicing().s("gm_church_organ").room(1).rsize(4).gain(0.4),
         x=>n("<[0,[~ 1@20],[~@2 2@20],[~@3 3@20],[~@4 4@20]]>/2").chord(x).anchor('e4').voicing().s("gm_acoustic_guitar_nylon").room(0.6).gain(0.5))
 
 v: "<0@16 1@16 2@24>/2".pickRestart([

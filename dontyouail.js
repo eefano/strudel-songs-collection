@@ -29,11 +29,11 @@ $: n(song.pkr(["0,1,2,3,4","~","0,1,2,3,4","~","0,1,2,3,4"]).struct(cho))
 
 $: chord(cho)
   .dict({'':['0 7 12 16']})
-  .mode('root').anchor("e3").voicing().struct(song.pkr([cho,"x"]))
+  .mode('root').anchor("e2").voicing().struct(song.pkr([cho,"x"]))
    .s("gm_distortion_guitar:4").att(.03).rel(.05).hpf(200).lpf(1600).gain(1).room(.3)
 //._pianoroll({fold:false,})
 
-$: n(song.pkr(["0".struct(cho),"0"])).mode('root').chord(cho).anchor('e2').voicing()
+$: n(song.pkr(["0".struct(cho),"0"])).mode('root').chord(cho).anchor('e1').voicing()
    .s("gm_electric_bass_finger:2").gain(.8)
    
 $: song.pkr([`~`,

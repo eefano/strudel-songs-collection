@@ -9,7 +9,7 @@ $: song.pickRestart([`<C _ F A _ C A <[C Em A C Em A] [E F A G A G]>@6>`,
       `<B A B F E G# E G# _ _ ~>`,`<Asus B F A C# E Am D Am D _ _ ~>`]).chord().layer(
   x=>x.anchor('g5').voicing().s("gm_pad_sweep").gain(song.pick([.65,.6,.6])).pan(.52),
   x=>x.anchor('g4').voicing().s("gm_piano:2").gain(.5).pan(.48).hpf(100).mask("<~@26 x@139>"),
-  x=>x.n("0").anchor('c2').mode('root').voicing()
+  x=>x.n("0").anchor('c2').mode('oldroot').voicing()
     .s("gm_acoustic_bass:1").clip(.7).rel(.1).lpf(100).gain(.5).mask("<~@26 x@139>"))
 
 $: song.pickRestart(["~",

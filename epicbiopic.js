@@ -30,7 +30,7 @@ orch: "<~ a@2 b a@2 b c@6 d@2 a@2 b e@2 f@9 i@6 g@4 h ~>/5".pickRestart({
     "<-1 [0 1]*3 0>".velocity(1.1),
     "<1 0*3>".velocity(.7).lpf(2800),
     "<[1 1*3] 2*3>","<[1 0] ~>".lpf(2500).velocity(.78)
-  ])).chord(t[0]).mode('root').anchor('g2').voicing().clip(.97).s("square").color('cyan').gain(.85),
+  ])).chord(t[0]).mode('oldroot').anchor('g2').voicing().clip(.97).s("square").color('cyan').gain(.83),
 
   "<~@4 a@2 b ~@2 c@4 d@2 e ~@2 ~@2 f@6 i@3 c@4 d@2 g@4 h ~>/5".pickRestart({
   a: "<~ [[5b 4 2]*2] [7 8b 7] [4 6b 4] [4 6] [[2 3] 4@7]@2 [~@3 6b*2] [6b@3 7*2] 9 >",
@@ -43,7 +43,7 @@ orch: "<~ a@2 b a@2 b c@6 d@2 a@2 b e@2 f@9 i@6 g@4 h ~>/5".pickRestart({
   g: "<[9@8 9]@2 7@2 [9@8 8 9]@2 9@3 [9@2 [10 11]] 9@3 [[9 7 9]!2] [9@5 9]@2 9@4>".add("<0@14 [0,-2]@6>"),
   h: "<[11 ~]>/5".add("0,-2"),
   i: "<[2 1 0] <[4@2 4*2]!2 4> <[4 ~ 0] 2*3 2> [2@3 1 0@2] 2 [4 3 2]>".add("<[0,-2]>/15"), 
-    }).scale(t[0].toscale()).s("gm_tuba").clip(.9).note().color('magenta').gain(1).room(.2)
+    }).scale(t[0].toscale()).s("gm_tuba").clip(.9).note().color('magenta').hpf(120).gain(1.1).room(.2)
 ))
 drums: "<x a@2 b a@2 b [c,k]@6 d@2 a@2 b e@2 f@9 [i,k]@6 g@4 h ~>/5".pickRestart({
   a: s("<[[cr,lt]!2]@10>").lpf(2600),

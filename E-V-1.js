@@ -3,9 +3,9 @@
 setcpm(130*2)
 
 $: "<0@8 1@8 0@4 1@4 2@6 1@2 0@2 0@2 ~@4>/16".pickRestart([`<Fm G G# C#>/4`,`<A Bm F# C#>/4`,`<Eb Em D# Dm C#m G#>/16`]).layer(
-  x=>n("<0 -3>/2".restart("x/7").restart("x/128")).late(.1).lpf(2000).chord(x).anchor('f3').mode('root').voicing()
+  x=>n("<0 -3>/2".restart("x/7").restart("x/128")).late(.1).lpf(2000).chord(x).anchor('f3').mode('oldroot').voicing()
     .s("tri").clip(.3).rel(.2).superimpose(x=>x.mask("<~ ~ x x ~>/128").s("supersaw")),
-  x=>n("<[0,3] [2,3] [1,3,5] [0,2,5]>/2").chord(x).anchor('c4').mode('root').voicing()
+  x=>n("<[0,3] [2,3] [1,3,5] [0,2,5]>/2").chord(x).anchor('c4').mode('oldroot').voicing()
     .s("tri").clip(.3).rel(.2).hpf(250).gain(.6),
   x=>chord(x).anchor('f4').s("supersaw").voicing().struct("<[~ x] [~ x _ ~]>/2").gain(.3).rel(.2).mask("<~ ~ x ~ ~>/128"),
   x=>chord(x).anchor('f5').s("gm_synth_strings_1").voicing().struct("x/8").gain(.5).rel(.2).mask("<~ ~ ~ [x@6 ~ ~] ~>/128")

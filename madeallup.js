@@ -22,12 +22,12 @@ orch: sequence.pickRestart({
     {a:"<b4@7 b4@6 b4@5 c5@6 d5@7 c#5@7>",
      b:"<c5@7 c5@6 c5@5 c#5@6 d#5@7 d5@7>",
      c:"<c4>",d:"<c4>",e:"<g5>"
-    })).voicing().s("gm_piano").room(.4).gain(.9).color('yellow')
-  .superimpose(x=>x.late(0.1).attack(.1).velocity(.7).pan(.2)), 
+    })).voicing().s("gm_piano").room(.4).gain(.8).color('yellow')
+  .superimpose(x=>x.late(0.1).attack(.1).velocity(.65).pan(.2).hpf(200)), 
 
-  n(t[1].pickRestart(["<0>/8","<[0 ~]>"])).chord(t[0]).mode('root').anchor('e2').voicing()
+  n(t[1].pickRestart(["<0>/8","<[0 ~]>"])).chord(t[0]).mode('root').anchor('e1').voicing()
   .transpose(t[2]).s("gm_electric_bass_finger").lpf(200).gain(1.4).color('cyan')
-).rsize(4)
+).rsize(6).orbit(1)
 )
 const choirline = note(`<c4@2 c4!3 b3 b3@2 b3 a3 [a3!2]@4
                    [c4!2]@4 c4!2 c4@2 c4 d#4 d#4@2
@@ -44,7 +44,7 @@ choir: sequence.pickRestart({
        ~ f#5@2 a#4@2 e5@2 d#5 ~ c#5@2 b4@2 a#4@2 ~>`)),
   d: mode2(note(`<~ a#4@2 g4@2 c5@2 b4 ~ a#4@2 f#4@2 g#4@2 ~>`)),
   e: mode2(note(`<~ c#5@2 d5@2 c#5@8 ~@18 >`))
-}).s("triangle").gain(0.9).lpf(5000).color('magenta').room(.5).rsize(4)//.pdec("<0@23 1@15>")
+}).s("triangle").gain(0.9).lpf(5000).color('magenta').room(.3).rsize(3).orbit(2)//.pdec("<0@23 1@15>")
   
 const tricky = "<0@7 0@6 0@4 0 0@6 0@7 0@7>"
     .pickRestart(["<cr,<bd [sd@3 sd] [bd bd] sd [bd bd] [sd bd] sd>>"]);
@@ -58,5 +58,5 @@ drums: sequence.pickRestart({
   bd: s('bd').lpf(800).velocity(1.1),
   sd: s('sd').velocity(.7),
   rd: s('rd').velocity(0.3).hpf(8000),
-  cr: s('cr').speed(0.7).velocity(0.1).hpf(6000),
-}).bank("Linn9000").room(0.4).gain(0.5).rsize(4)
+  cr: s('cr').speed(0.7).velocity(0.12).hpf(6000),
+}).bank("Linn9000").room(0.6).gain(0.5).rsize(2).orbit(3)
