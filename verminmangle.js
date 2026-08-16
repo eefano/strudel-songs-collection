@@ -23,7 +23,7 @@ $: chord(song.pickRestart(ch0rds)).anchor('E4').voicing()
   .layer(x=>x.s("gm_accordion:2").struct("[~ x x]").clip(.6).pan(.40).gain(.4),
          x=>x.transpose(12).s("gm_string_ensemble_2:2").pan(.5).gain(.4))
 
-$: n("[0 ~ ~]").chord(song.pickRestart(ch0rds)).mode('oldroot').anchor('f#2').voicing()
+$: n("[0 ~ ~]").chord(song.pickRestart(ch0rds)).mode('root').anchor('g1').voicing()
   .s("gm_tuba:3").gain(1)
 
 $: s("bassdrum2:2,tambourine:0").clip(1.5).gain(1.5)

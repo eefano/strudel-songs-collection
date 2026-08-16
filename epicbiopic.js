@@ -30,7 +30,7 @@ orch: "<~ a@2 b a@2 b c@6 d@2 a@2 b e@2 f@9 i@6 g@4 h ~>/5".pickRestart({
     "<-1 [0 1]*3 0>".velocity(1.1),
     "<1 0*3>".velocity(.7).lpf(2800),
     "<[1 1*3] 2*3>","<[1 0] ~>".lpf(2500).velocity(.78)
-  ])).chord(t[0]).mode('oldroot').anchor('g2').voicing().clip(.97).s("square").color('cyan').gain(.83),
+  ])).chord(t[0]).mode('root').anchor('g#1').voicing().clip(.97).s("square").color('cyan').gain(.83),
 
   "<~@4 a@2 b ~@2 c@4 d@2 e ~@2 ~@2 f@6 i@3 c@4 d@2 g@4 h ~>/5".pickRestart({
   a: "<~ [[5b 4 2]*2] [7 8b 7] [4 6b 4] [4 6] [[2 3] 4@7]@2 [~@3 6b*2] [6b@3 7*2] 9 >",

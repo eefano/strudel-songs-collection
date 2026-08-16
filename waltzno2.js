@@ -13,7 +13,7 @@ melody: "<~@4 0@16 1@7 2@11.5 ~@3.5>".pickRestart([
 piano: "<0@28 1@10 0@4>".pickRestart([
      n("<<0 -1> [4,5]!2>*3").chord("<Cm@10 Fm@4 G@4 Cm@4 Fm@2 Bb@2 Eb Ab>"),
      n("<3 <[4,5] > ~>*3").chord("<G Ab Cm Ab>")
-          ]).anchor('f2').mode('oldroot').voicing().piano()._pianoroll()
+          ]).anchor('f#1').mode('root').voicing().piano()._pianoroll()
 
 tempochanges: cps(sine.segment(32).slow(16).mul(30).add(160).div(60*3)).gain(0)
 
